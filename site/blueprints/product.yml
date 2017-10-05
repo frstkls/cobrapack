@@ -1,0 +1,37 @@
+title: Product
+
+files:
+  sortable: true
+  fields:
+    imagealt:
+      label: Alt text
+      type: text
+      
+pages: true
+  sortable: true
+
+files: true
+  sortable: true
+
+options:
+  template: true
+
+fields:
+  productmainimage:
+    label: Hoofdafbeelding
+    type: image    
+    width: 1/2
+    
+  titel:
+    label: Titel
+    type:  text
+    width: 1/2
+
+  text:
+    label: Text
+    type:  textarea
+
+  pictures:
+    label: Gallery
+    type: gallery
+    aspectRatio: 4:3

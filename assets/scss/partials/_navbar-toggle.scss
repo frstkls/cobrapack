@@ -1,0 +1,46 @@
+.navbar {
+
+    &-default {
+
+        .navbar-toggle .icon-bar {
+            //@include transition;
+            //background-color: $color-base;
+            //width: 22px;
+        }
+    }
+
+    &-toggle {
+
+        .icon-bar {
+            @include transition;
+            background-color: $color-base;
+            width: 22px;
+        }
+
+        .top-bar {
+            @include origin(10% 10%);
+            @include rotate(45deg);
+        }
+
+        .middle-bar {
+            opacity: 0;
+        }
+
+        .bottom-bar {
+            @include origin(10% 90%);
+            @include rotate(-45deg);
+        }
+
+        &.collapsed {
+
+            .top-bar,
+            .bottom-bar {
+                @include rotate(0);
+            }
+
+            .middle-bar {
+                opacity: 1;
+            }
+        }
+    }
+}

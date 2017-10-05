@@ -1,0 +1,33 @@
+{
+  "name": "kirby-bootstrap-starterkit",
+  "description": "bower json file for kirby-bootstrap-startkit",
+  "main": "",
+  "moduleType": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "bootstrap",
+    "bower",
+    "kirby",
+    "starterkit"
+  ],
+  "authors": "Hendrik Berends <mail@hennirocks.de> (http://hennirocks.de)",
+  "homepage": "https://github.com/NECKRHINOS/kirby-bootstrap-starterkit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/goldland/kcp-gmbasicext.git"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4"
+  },
+  "devDependencies": "",
+  "private": true
+}

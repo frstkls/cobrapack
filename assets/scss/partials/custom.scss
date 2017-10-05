@@ -1,0 +1,106 @@
+html, body {
+  height: 100%;
+}
+
+body {
+	@include weightLight;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+main {
+  overflow:auto;
+  padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+img {
+	max-width:100%;
+}
+
+.navbar-default {
+    background-color:#FFF;
+}
+
+.row-logo {
+    display:block;
+    position:relative;
+    width:100%;
+    height:120px;
+}
+
+.row-logo {
+	margin:30px 0px 0px 0px;
+}
+
+.row-logo img {
+	width:150px;
+}
+
+.home-intro {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    padding:40px 0px;
+}
+
+.intro-top {
+    float:right;
+    width:50%;
+    padding-top:20px;
+}
+
+.homeproducts {
+	padding:50px 0px 0px 20px;
+}
+
+.homeproduct h3 {
+	@include weightLight;
+	background:$cobracolor;
+	color:$wit;
+	padding:15px 10px;
+	margin-top:0;
+	font-size:12px;
+	text-transform:uppercase;
+}
+
+.hometroeven {
+	display:block;
+	padding:50px 100px;
+}
+
+.hometroeven h2 {
+	margin-bottom:50px;
+}
+
+.hometroeven h3 {
+	margin-top:0px;
+	margin-bottom:20px;
+}
+
+.hometroeven .col-md-6 {
+	padding-bottom:50px;
+}
+
+.iconround {
+	border:2px solid $cobracolor;
+	color:$cobracolor;
+	padding:20px;
+	border-radius:50%;
+}
+
+.carousel-control {
+	background-image:none!important;
+}
+
+
+footer {
+	position: relative;
+	margin-top: -150px; /* negative value of footer height */
+	height: 100px;
+	clear:both;
+	padding-top:20px;
+	background-color:$donker;
+	color:$wit;
+}

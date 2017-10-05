@@ -1,0 +1,12 @@
+@mixin transition {
+    transition-duration: .5s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+
+    &:focus,
+    &:hover {
+        transition-duration: .5s;
+        transition-property: all;
+        transition-timing-function: ease-in-out;
+    }
+}

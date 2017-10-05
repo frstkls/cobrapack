@@ -1,0 +1,33 @@
+@mixin hyperlinkBackgroundColor($color, $colorActive, $colorOver) {
+    background-color: $color;
+    transition: background-color ease-in-out .5s;
+
+    &.active,
+    &:active {
+        background-color: $colorActive;
+    }
+
+    &:focus,
+    &:hover {
+        background-color: $colorOver;
+        text-decoration: none;
+        transition: background-color ease-in-out .5s;
+    }
+}
+
+@mixin hyperlinkColor($color, $colorActive, $colorOver) {
+    color: $color;
+    transition: color ease-in-out .5s;
+
+    &.active,
+    &:active {
+        color: $colorActive;
+    }
+
+    &:focus,
+    &:hover {
+        color: $colorOver;
+        text-decoration: none;
+        transition: color ease-in-out .5s;
+    }
+}

@@ -1,0 +1,12 @@
+/.git/*
+/.sass-cache/*
+/bower_components/*
+/node_modules/*
+/site/accounts/.*
+/site/accounts/*.php
+/site/cache/*
+
+.DS_Store
+.ftppass
+.Icon
+.remote-sync.json

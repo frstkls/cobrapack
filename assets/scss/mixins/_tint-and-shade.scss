@@ -1,0 +1,15 @@
+/*
+ * Source: https://css-tricks.com/snippets/sass/tint-shade-functions/
+ *
+ * Tint: Slightly lighten a color
+ * Shade: Slightly darken a color
+ *
+ */
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}

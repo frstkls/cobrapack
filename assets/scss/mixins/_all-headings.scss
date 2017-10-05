@@ -1,0 +1,34 @@
+@mixin allHeadings($color, $font-size, $line-height) {
+
+    @for $index from 1 through 6 {
+
+        h#{$index},
+        .h#{$index} {
+            color: $color;
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+    }
+}
+
+@mixin allHeadingsColor($color) {
+
+    @for $index from 1 through 6 {
+
+        h#{$index},
+        .h#{$index} {
+            color: $color;
+        }
+    }
+}
+
+@mixin allHeadingsSize($font-size) {
+
+    @for $index from 1 through 6 {
+
+        h#{$index},
+        .h#{$index} {
+            font-size: $font-size;
+        }
+    }
+}
