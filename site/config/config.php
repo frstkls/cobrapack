@@ -31,4 +31,18 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 
 c::set('sitemap.exclude', array('error'));
 c::set('debug', true);
-
+c::set('languages', array(
+  array(
+    'code'    => 'nl',
+    'name'    => 'Nederlands',
+    'default' => true,
+    'locale'  => 'nl_NL',
+    'url'     => '/',
+  ),
+  array(
+    'code'    => 'fr',
+    'name'    => 'Francais',
+    'locale'  => 'fr_FR',
+    'url'     => '/fr',
+  ),
+));

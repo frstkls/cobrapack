@@ -1,37 +1,22 @@
 <? snippet('header') ?>
 
 <main class="home">
-	<div class="home-intro"><?= $page->intro() ?></div>
-    <div class="row homeproducts">
-        <?php 
-        $producten = $page->producten()->yaml();
-        foreach($producten as $product): ?>
-        <div class="col-md-4 homeproduct">
-            <?php if($image = $page->image($product['afbeelding'])) echo $image->html() ?>
-            <h3><?php echo $product['naam'] ?></h3>
+    <div class="container">
+        <div class="row">
+            <?php
+                    $products = page('products')->children();
+                    foreach($products as $product): ?>
+                        <div class="col-md-4 homeproduct">
+                        <?php $image = $product->productmainimage()->toFile(); ?>
+                        <a href="<?php echo $product->url() ?>">
+                            <img src="<?php echo $image->url() ?>">
+                            <h3><?php echo $product->producttitle() ?></h3>
+                        </a>            
+                        </div>
+                    <?php endforeach ?>
+        </div>    
+        <?= $page->text()->kirbytext() ?>
         </div>
-        <?php endforeach ?>
-    </div>    
-    <div class="row hometroeven">
-    	<?php 
-        $troeven = $page->troeven()->yaml();
-        foreach($troeven as $troef): ?>
-    	<div class="col-md-6">
-            <div class="row">
-                <div class="col-md-5">   
-                    <i class="fa fa-<?php echo $troef['icoon'] ?> fa-4x iconround" ></i>
-                </div> 
-                <div class="col-md-7">   
-                    <h2><?php echo $troef['troeftitel'] ?></h2>
-            		<?php echo $troef['troefomschrijving'] ?>
-                </div>
-            </div>
-    	</div>
-    	<?php endforeach ?>
-    </div>
-
-    <?= $page->text()->kirbytext() ?>
-    
 </main>
 
 <? snippet('footer') ?>

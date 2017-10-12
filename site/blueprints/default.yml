@@ -2,6 +2,8 @@
 
 title: Default
 pages: default
+options:
+  template: true
 fields:
   title:
     label: Page title (H1)

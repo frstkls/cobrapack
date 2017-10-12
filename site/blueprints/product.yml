@@ -17,13 +17,18 @@ options:
   template: true
 
 fields:
+  title:
+    label: Page title (H1)
+    type: text
+    width: 1/2
+
   productmainimage:
     label: Hoofdafbeelding
     type: image    
     width: 1/2
     
-  titel:
-    label: Titel
+  producttitle:
+    label: Product titel
     type:  text
     width: 1/2
 

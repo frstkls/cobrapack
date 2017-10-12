@@ -29,15 +29,6 @@
         <![endif]-->
         <? snippet('favicons') ?>
     </head>
-    <body>
-       
-            <header>
-                <div class="container">
-                    <div class="row-logo">
-                        <a href="#"><img class="logo" src="<?php echo kirby()->urls()->assets() . '/img/cobra-logo.png' ?>" alt="Cobrapack"></a>
-                        <div class="intro-top"><?= $site->intro() ?></div>
-                    </div>   
-                </div>
-            </header>
+    <body class="<?php echo $page->template() ?>">
             <? snippet('navbar') ?>
-    <div class="container">
+    

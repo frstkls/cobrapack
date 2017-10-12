@@ -14,6 +14,14 @@ fields:
     label: Title suffix (Optional)
     type: text
     width: 1/2
+  adrescobra:
+    label: Adres Cobrapack
+    type: textarea
+    width: 1/2
+  adresmaro:
+    label: Adres Maro Recycling
+    type: textarea
+    width: 1/2
   author:
     label: Author of website
     type: text
