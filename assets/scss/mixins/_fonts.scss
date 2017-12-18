@@ -3,7 +3,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: normal;
     line-height: 12px;
 }
 
@@ -32,6 +32,11 @@
     font-style: normal;
     font-weight: normal;
     line-height: $line-height;
+}
+
+@mixin weightExtraLight {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
 }
 
 @mixin weightLight {

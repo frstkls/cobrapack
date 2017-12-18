@@ -1,0 +1,479 @@
+html, body {
+  height: 100%;
+}
+
+body {
+	padding-top: $menuHeight;
+	@include weightExtraLight;
+	background-color: $lichtlichtgrijs;
+}
+
+a:hover, a:focus {
+	text-decoration:none;
+}
+
+a, button {
+	@include transition; 
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top:0px;
+	margin-bottom:40px;
+}
+
+hr {
+	border-top: 1px solid $cobracolor;
+	margin-top:30px;
+	margin-bottom:40px;
+}
+
+.columns {
+  margin-right: -2rem;
+}
+.column {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 2rem;
+}
+.columns-1 .column {
+  width: 100%;
+}
+.columns-2 .column {
+  width: 50%;
+}
+.columns-3 .column {
+  width: 33.33%;
+}
+.columns-4 .column {
+  width: 25%;
+}
+.columns-5 .column {
+  width: 20%;
+}
+
+.btnmargin {
+	margin-top:50px;
+}
+
+.btn {
+	@include border-radius(3px);
+	outline:0;
+}
+
+#wrap {
+  	min-height: 100%;
+  	height: auto !important;
+}
+
+main {
+  	padding-bottom:150px; /* this needs to be bigger than footer height*/
+  	padding-top:50px;
+  	overflow:auto;
+}
+
+main.home {
+	padding-top:35px;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+@media (min-width: 768px){
+.navbar-nav {
+    float: left;
+    margin: 0;
+}}
+
+@media (min-width: 1000px){
+.contactadres {
+    padding-left: 50px;
+}}
+
+.navbar-brand {
+    float: left;
+    height: 0px;
+    padding: 15px 15px;
+}
+
+.navbar-brand img.logo {
+	width:150px;
+}
+
+.navbar {
+	height:$menuHeight;
+	border-radius:0px;
+	border-left:0px;
+	border-right:0px;
+}
+
+.navbar-nav {
+	width: 100%;
+    text-align: center;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+	padding-left:150px;
+	font-size:13px;
+	text-transform:uppercase;
+	@include weightBold;
+}
+
+/*
+.navbar-default .navbar-nav>li>a {
+	line-height: 100px;
+}
+*/
+
+.navbar-toggle {
+	margin-top:40px;
+	margin-right:20px;
+}
+
+.nav-right {
+	float:right!important;
+	padding:15px 10px;
+	width:150px;
+}	
+
+.navbar-collapse {
+	padding-left:0px;
+	padding-right:0px;
+	background:#FFF;
+}
+
+.navbar-collapse.in {
+    overflow-y: auto;
+    background:$wit;
+    margin-top:37px;
+}
+
+.nav-right ul li {
+	list-style-type:none;
+	float:left;
+	display:inline-block;
+	padding-left:10px;
+	padding-left:10px;
+}
+
+.nav-right ul li {
+	list-style-type:none;
+	float:left;
+	display:inline-block;
+	padding-left:20px;
+}
+
+.nav-right ul li a {
+	color:$donker;
+	font-size:12px;
+}
+
+.navbar-collapse.in .nav-right {
+	text-align:center;
+}
+
+.navbar-collapse.in .nav-right ul {
+	display:inline-block;
+	float:none;
+	margin-left:-50px;
+}
+
+.navbar-collapse.in .nav-right li {
+	display:inline-block;
+	float:left;
+	background:none;
+}
+
+.navbar-collapse.in .nav-right li a {
+	color:$donker;
+}
+
+.collapse.in {
+    display: block;
+}
+
+.collapse.in .navbar-nav{
+	padding-left:0;
+	padding-right:0;
+}
+
+.collapse.in .nav-right{
+	width:100%;
+}
+
+.collapse.in .navbar-nav>li {
+	display:block;
+}
+
+.navbar-collapse {
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar-default .navbar-nav>.active>a {
+	color:$cobracolor;
+	background:none;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+	color: darken($cobracolor, 4%);
+	background:none;
+}
+
+.navbar-default .navbar-nav>.active>a {
+	background:none;
+}
+
+img {
+	max-width:100%;
+}
+
+.navbar-default {
+    background-color:#FFF;
+}
+
+.row-logo {
+	background:$wit;
+    display:block;
+    position:relative;
+    width:100%;
+    padding:30px 0px ;
+}
+
+.row-logo img {
+	width:150px;
+}
+
+.homeintro {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    padding:10px 0px;
+    text-align: center;
+    font-size:25px;
+    line-height:40px;
+}
+
+.intro-top {
+    float:right;
+    width:50%;
+    padding-top:20px;
+}
+
+.homeproducts {
+	padding:50px 0px 50px 0px;
+}
+
+.homeproduct {
+	padding-bottom:30px;
+}
+
+.homeproduct h3 {
+	@include weightLight;
+	background:$cobracolor;
+	color:$wit;
+	padding:25px 20px;
+	margin-top:0;
+	margin-bottom:0;
+	font-size:12px;
+	text-transform:uppercase;
+}
+
+.homeproduct:hover h3{
+	color:$cobracolor;
+	background:$wit;
+}
+
+.homeproductinner {
+	@include border-radius(3px);
+}
+
+.homeproductinner:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	@include transition; 
+}
+
+.hometroeven {
+	display:block;
+}
+
+.hometroef {
+	margin-bottom:30px;
+}
+
+.hometroeven h2 {
+	margin-bottom:50px;
+}
+
+.hometroeven h3 {
+	font-size:15px;
+	margin-top:0px;
+	margin-bottom:20px;
+}
+
+.homenieuws h4 {
+	margin-top:0px;
+	margin-bottom:20px;
+}
+
+.nieuwsbeeld {
+	margin-bottom:20px;
+}
+
+.nieuwsbericht {
+	padding-right:40px;
+}
+
+.carousel-control {
+	background-image:none!important;
+}
+
+.calltoaction {
+	margin-top:50px;
+	background-color:$cobracolor;
+	padding:50px;
+	text-align:center;
+	color:$wit;
+}
+
+.calltoaction a {
+	color:#FFF;
+}
+
+.calltoaction button {
+	color:$cobracolor;
+	background:$wit;
+	padding:20px;
+}
+
+.calltoaction button:hover{
+	background-color: darken($wit, 10%);
+}
+
+.calltoaction h3 {
+	margin-bottom:40px;
+}
+
+main.home {
+	padding-bottom:100px;
+}
+
+.productslider {
+	padding-bottom:30px;
+}
+
+.werknemer {
+	padding-bottom:30px;
+}
+
+.werknemer h4 {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.contact label {
+	display:block;
+}
+
+.contactcolumn {
+	padding-bottom:30px;
+}
+
+ #map {
+	width: 100%;
+	height: 500px;
+	margin-top:50px;
+	margin-bottom:80px;
+}
+
+.contact h2 {
+	font-size:14px;
+	margin-bottom: 30px;
+}
+
+.contact main {
+	padding-bottom:100px;
+}
+
+.uniform__potty {
+    position: absolute;
+    left: -9999px;
+}
+
+.uniform-errors {
+	padding-top:30px;
+}
+
+label {
+	font-weight: normal;
+}
+
+input, textarea {
+	border:1px solid $lichtgrijs;
+	outline:none;
+	padding:10px;
+	@include border-radius(3px);
+}
+
+input, textarea {
+	float:none;
+	display:block;
+	clear:both;
+	padding:20px;
+	width:100%;
+}
+
+textarea {
+	height:200px;
+	width:100%;
+}
+
+input[type="submit"] {
+	background:$cobracolor;
+	color:$wit;
+	border:none;
+	margin-top:30px;
+}
+
+input[type="submit"]:hover {
+	background:darken($cobracolor, 4%);
+	color:$wit;
+	border:none;
+}
+
+footer {
+	position: relative;
+	margin-top: -100px; /* negative value of footer height */
+	min-height: 180px;
+	clear:both;
+	padding-top:50px;
+	background-color:$wit;
+	color:$donker;
+}
+
+footer h4 {
+	margin-top:0px;
+}
+
+footer img.logo {
+	width: 150px;
+}
+
+.footerbottom {
+	background:$lichtgrijs;
+	padding:20px 0px;
+	margin-top:50px;
+	font-size:11px;
+}
+

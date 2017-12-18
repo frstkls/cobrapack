@@ -4,7 +4,7 @@
 	<div class="container">
 	    <h1><?= $page->titel()->html() ?></h1>
 	    <div class="row">
-	    	<div class="col-md-6">
+	    	<div class="col-md-6 productslider">
 
 				<div id="carousel-example-generic" class="carousel slide">
 				<!-- Indicators -->

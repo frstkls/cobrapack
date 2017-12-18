@@ -20,7 +20,8 @@
         <? endif ?>
         <meta name="robots" content="index, follow">
         <link rel="author" href="humans.txt">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
         <?= css('assets/css/main.min.css') ?>
         <!--[if lt IE 9]>
@@ -30,5 +31,6 @@
         <? snippet('favicons') ?>
     </head>
     <body class="<?php echo $page->template() ?>">
+            <? snippet('ssb') ?>
             <? snippet('navbar') ?>
     
