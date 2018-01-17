@@ -105,11 +105,13 @@ class EmailAction extends Action
     {
         $snippet = $this->option('snippet');
         $data = $this->form->data();
+        $customFields = $this->form->customFields; # Custom PJ
 
         if ($snippet) {
             $body = $this->getSnippet($snippet, [
                 'data' => $data,
-                'options' => $this->options
+                'options' => $this->options,
+                'customFields' => $this->form->customFields, # Custom PJ
             ]);
         } else {
             unset($data[self::EMAIL_KEY]);

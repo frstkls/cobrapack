@@ -1,16 +1,16 @@
 title: Product
 
-files:
+files: true
   sortable: true
   fields:
     imagealt:
       label: Alt text
       type: text
+    formaat:
+      label: Formaat
+      type: text
       
 pages: true
-  sortable: true
-
-files: true
   sortable: true
 
 options:
@@ -26,6 +26,17 @@ fields:
     label: Hoofdafbeelding
     type: image    
     width: 1/2
+
+  slides:
+      label: Slider
+      type: structure
+      fields:
+        slide:
+          label: Slide
+          type: image
+        caption:
+          label: Bijschrift
+          type: text
     
   producttitle:
     label: Product titel
@@ -34,7 +45,7 @@ fields:
 
   text:
     label: Text
-    type:  textarea
+    type:  wysiwyg
 
   pictures:
     label: Gallery

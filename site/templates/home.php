@@ -1,8 +1,9 @@
 <? snippet('header') ?>
     <div id="wrap">
-        <main class="home">
+        <main class="home">    
+            <div class="homeintro animated fadeInUp"><div class="homeintro_inner"><?= $site->intro()->kirbytext() ?></div></div>
+            <?php snippet('pageslider') ?>
             <div class="container">
-            	<div class="homeintro"><?= $page->intro() ?></div>	
                 <div class="row homeproducts">
                     <?php
                     $products = page('products')->children();
@@ -10,13 +11,23 @@
                         <div class="col-md-4 homeproduct">
                             <div class="homeproductinner">
                                 <?php $image = $product->productmainimage()->toFile(); ?>                                
-                                <a href="<?php echo $product->url() ?>">
-                                    <img src="<?php echo $image->url() ?>">
+                                <a href="<?php echo $product->url() ?>">                                    
+                                    <?php if($image) echo thumb($image, array('width' => 800, 'height' => 600)); ?> 
                                     <h3><?php echo $product->producttitle() ?></h3>
                                 </a>
                             </div>            
                         </div>
                     <?php endforeach ?>
+                    <div class="col-md-4 homeproduct">
+                        <div class="homeproductinner">
+                            <?php $image = $page->image('aankooptweedehands.jpg'); ?>
+                                                            
+                            <a href="tekoop">                                    
+                                <?php if($image) echo thumb($image, array('width' => 800, 'height' => 600)); ?> 
+                                <h3><?php echo l::get('aankoop') ?></h3>
+                            </a>
+                        </div>            
+                    </div>                
                 </div>
                 
                 <!--
@@ -41,14 +52,12 @@
                     <?php endforeach ?>
                 </div>
                 <hr>
-
-
-                <?= $page->text()->kirbytext() ?>
+                <div class="homemain"><?= $page->text()->kirbytext() ?></div>
             </div>       
             <div class="calltoaction">
                 <h3>Paletten te koop?</h3>
                 <p>Contacteer ons! Bel ons op 069/84.34.82 of e-mail ons via <a href="mailto:info@cobrapack.be">info@cobrapack.be</a></p>
-                <div class="btnmargin"><button type="button" class="btn btn-secondary btn-lg"><a href="tekoop">Contacteer ons</a></button></div>
+                <button type="button" class="btn btn-secondary btn-lg"><a href="tekoop">Contacteer ons</a></button>
             </div>
         </main>
     </div> <!-- wrap -->

@@ -8,6 +8,10 @@ body {
 	background-color: $lichtlichtgrijs;
 }
 
+a {
+	color:$cobracolor;
+}
+
 a:hover, a:focus {
 	text-decoration:none;
 }
@@ -19,6 +23,11 @@ a, button {
 h1, .h1, h2, .h2, h3, .h3 {
 	margin-top:0px;
 	margin-bottom:40px;
+}
+
+h2 {
+	@include weightLight;
+	font-size:24px;
 }
 
 hr {
@@ -71,8 +80,15 @@ main {
   	overflow:auto;
 }
 
-main.home {
-	padding-top:35px;
+img {
+	max-width:100%;
+}
+
+/** Menu
+ ---------------------------------------------------------*/
+
+.navbar-default {
+    background-color:#FFF;
 }
 
 .navbar-fixed-top {
@@ -93,10 +109,6 @@ main.home {
     margin: 0;
 }}
 
-@media (min-width: 1000px){
-.contactadres {
-    padding-left: 50px;
-}}
 
 .navbar-brand {
     float: left;
@@ -128,11 +140,9 @@ main.home {
 	@include weightBold;
 }
 
-/*
-.navbar-default .navbar-nav>li>a {
-	line-height: 100px;
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	background:none;
 }
-*/
 
 .navbar-toggle {
 	margin-top:40px;
@@ -235,15 +245,20 @@ main.home {
 	background:none;
 }
 
-img {
-	max-width:100%;
+.collapse.in .dropdown-menu{
+	text-align: center;
 }
 
-.navbar-default {
-    background-color:#FFF;
+.dropdown-menu {
+	padding:0px 0px;
+	margin-top:30px!important;
 }
 
-.row-logo {
+.dropdown-menu>li>a {
+	padding:15px 20px;
+}
+
+/*.row-logo {
 	background:$wit;
     display:block;
     position:relative;
@@ -255,24 +270,48 @@ img {
 	width:150px;
 }
 
-.homeintro {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 900px;
-    padding:10px 0px;
-    text-align: center;
-    font-size:25px;
-    line-height:40px;
-}
-
 .intro-top {
     float:right;
     width:50%;
     padding-top:20px;
+}*/
+
+/** Home
+ ---------------------------------------------------------*/
+
+ main.home {
+	padding-top:0px;
+	padding-bottom:100px;
+}
+
+.home .carousel {
+	max-height: 900px;
+}
+
+.carousel img {
+	width: 100%;
+}
+
+.homeintro {
+    margin-left: auto;
+    margin-right: auto;
+    padding:10px 0px;
+    text-align: center;
+    font-size:30px;
+    line-height:60px;
+}
+
+.homeintro_inner {
+	max-width: 900px;
+	margin:auto;
+}
+
+.homeintro strong {
+	color:$cobracolor;
 }
 
 .homeproducts {
-	padding:50px 0px 50px 0px;
+	padding:50px 0px 0px 0px;
 }
 
 .homeproduct {
@@ -308,18 +347,21 @@ img {
 	display:block;
 }
 
-.hometroef {
-	margin-bottom:30px;
+.homemain .column:nth-child(2) ul {
+	margin-left:-10px;
 }
 
-.hometroeven h2 {
-	margin-bottom:50px;
+.homemain .column:nth-child(2) ul li {
+	list-style: none;
+	padding-bottom: 10px;
 }
 
-.hometroeven h3 {
-	font-size:15px;
-	margin-top:0px;
-	margin-bottom:20px;
+.homemain .column:nth-child(2) ul li:before {
+	content: '\f00c';
+	font-family: 'FontAwesome';
+	float: left;
+	margin-left: -1.5em;
+	margin-right: 1em;
 }
 
 .homenieuws h4 {
@@ -339,6 +381,8 @@ img {
 	background-image:none!important;
 }
 
+.carousel-indicators {display:none;}
+
 .calltoaction {
 	margin-top:50px;
 	background-color:$cobracolor;
@@ -357,6 +401,10 @@ img {
 	padding:20px;
 }
 
+.calltoaction button a {
+	color:$cobracolor;
+}
+
 .calltoaction button:hover{
 	background-color: darken($wit, 10%);
 }
@@ -365,13 +413,76 @@ img {
 	margin-bottom:40px;
 }
 
-main.home {
-	padding-bottom:100px;
+/** Product
+ ---------------------------------------------------------*/
+
+/*.grid-item { 
+	width: 200px; 
+	height:200px;
+	background:red;
+	margin-bottom:20px;
 }
+
+.width2 { width: 420px; }
+.height2 { height: 420px; }
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
 
 .productslider {
 	padding-bottom:30px;
 }
+
+
+.carousel-caption {
+	background:red;
+	bottom:60px;
+	top:0;
+	width:400px!important;
+	height:60px;
+}
+
+*/
+
+.product__description {
+	text-align: center;
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+}
+
+.productinfo {
+	padding-top:40px;
+}
+
+.productinfo ul li {
+	padding-bottom:10px;
+}
+
+.flickity-carousel {
+	margin-bottom: 80px;
+	background: #EEE;
+}
+
+.flickity-carousel img {
+	display: block;
+	height: 200px;
+	margin: 0;
+}
+
+@media screen and ( min-width: 768px ) {
+	.flickity-carousel img {
+		height: 400px;
+		margin: 0 5px;
+	}
+}
+
+/** Over ons
+ ---------------------------------------------------------*/
 
 .werknemer {
 	padding-bottom:30px;
@@ -379,7 +490,31 @@ main.home {
 
 .werknemer h4 {
 	padding-top:20px;
-	padding-bottom:20px;
+	padding-bottom:10px;
+}
+
+@media (min-width: 1000px){
+.contactadres {
+    padding-left: 50px;
+    padding-top:20px;
+}}
+
+/** Diensten
+ ---------------------------------------------------------*/
+
+ .dienst img {
+ 	margin-bottom:30px;
+ }
+
+ .dienst {
+ 	margin-bottom:50px;
+ }
+
+/** Contact
+ ---------------------------------------------------------*/
+
+.contactform {
+	margin-top:50px;
 }
 
 .contact label {
@@ -390,11 +525,11 @@ main.home {
 	padding-bottom:30px;
 }
 
- #map {
-	width: 100%;
+#map {
 	height: 500px;
-	margin-top:50px;
-	margin-bottom:80px;
+  	width: 100%;
+  	margin-top:50px;
+  	margin-bottom:50px;
 }
 
 .contact h2 {
@@ -404,11 +539,16 @@ main.home {
 
 .contact main {
 	padding-bottom:100px;
+	padding-top: 0px!important;
 }
 
 .uniform__potty {
     position: absolute;
     left: -9999px;
+}
+
+.succes {
+	padding-top:30px;
 }
 
 .uniform-errors {
@@ -439,11 +579,13 @@ textarea {
 	width:100%;
 }
 
-input[type="submit"] {
+button, input[type="submit"] {
 	background:$cobracolor;
 	color:$wit;
 	border:none;
 	margin-top:30px;
+	padding:20px;
+	border-radius:2px;
 }
 
 input[type="submit"]:hover {
@@ -477,3 +619,40 @@ footer img.logo {
 	font-size:11px;
 }
 
+.footerlogo img {
+	max-width:100px;
+	margin-right:30px;
+}
+
+.message_area {
+	background-color:none!important;
+	border:none;
+	width:400px;
+}
+
+@media (max-width: 576px) {
+.homeintro {
+    font-size:15px!important;
+}
+}
+
+@media (max-width: 768px) {
+.homeintro {
+    font-size:15px!important;
+}
+}
+
+@media (max-width: 992px) {
+.homeintro {
+    font-size:20px!important;
+}
+}
+
+@media (min-width: 1200px) {
+.homeintro {
+    font-size:30px!important;
+}
+.homeintro_inner {
+    padding:30px;
+}		
+}

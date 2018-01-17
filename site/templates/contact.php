@@ -1,18 +1,45 @@
 <?php snippet('header') ?>
+  	<main class="main" role="main">
+  		<div id="carousel-example-generic" class="carousel slide pageslider" data-interval="4000" data-ride="carousel">
+			<!-- Indicators 
+				<ol class="carousel-indicators">
+				<?php $slides = $page->slides()->yaml(); $n=0; foreach($slides as $slide): ?>
+				<li data-target="#carousel-example-generic" data-slide-to="<?php echo $n; $n++; ?>" class="<?php if($n==1) echo ' active' ?>">
+					<?php echo $n; ?>
+				</li>
 
-  <main class="main" role="main">
-  	<div class="container">
-	    <header>
-			<h1><?= $page->pagetitle()->html() ?></h1>   								
-	    </header>	
+				<?php endforeach ?>
+			-->				
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+			<?php $slides = $page->slides()->yaml(); $n=0; foreach($slides as $slide): $n++; ?>
+			<div class="item<?php if($n==1) echo ' active' ?>">
+				<img src="<?php if($image = $page->image($slide['slide'])) echo $image->url() ?>" alt="<?php if($image = $page->image($slide['slide'])) echo $image->title() ?>" class="img-responsive" />
+			</div>
+			<?php endforeach ?>
+			</div>		
+			<!-- Controls 
+			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+			<span class="icon-prev"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+			<span class="icon-next"></span>
+			</a> -->
+		</div>
+  		<div class="container">
+		    <header>
+				<h1><?= $page->pagetitle()->html() ?></h1>   								
+		    </header>	
+		    <h3>Contacteer ons</h3>	
 			<div class="row">
-				<div class="col-md-6 contactcolumn">
+				<div class="col-md-8 contactcolumn">
 					<div class="contactform">				
 							<form action="<?php echo $page->url() ?>#form" method="POST">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Naam</label>
+											<label><?php echo l::get('naam') ?></label>
 											<input<?php if ($form->error('name')): ?> class="error"<?php endif; ?> name="name" type="text" value="<?php echo $form->old('name') ?>">
 										</div>
 									</div>
@@ -24,74 +51,33 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label>Bericht</label>
+									<label><?php echo l::get('bericht') ?></label>
 									<textarea<?php if ($form->error('message')): ?> class="error"<?php endif; ?> name="message"><?php echo $form->old('message') ?></textarea>
 								</div>
 
 								<?php echo csrf_field() ?>
 								<?php echo honeypot_field() ?>
 
-								<input type="submit" value="Verzend">
+								<input type="submit" value="<?php echo l::get('verzend') ?>">
 							</form>
 							<?php if ($form->success()): ?>
-								We hebben je bericht goed ontvangen en komen zo snel mogelijk bij je terug!
+								<div class="succes">We hebben je bericht goed ontvangen en komen zo snel mogelijk bij je terug!</div>
 								<a name="form"></a>
 							<?php else: ?>
 								<?php snippet('uniform/errors', ['form' => $form]) ?>					
 							<?php endif; ?>								
 					</div>
 				</div>
-				<div class="col-md-6 contactadres">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6">
-							<h2>Cobrapack</h2>
-							Rue du Mont des Carliers 2/Z<br />7522 Tournai<br /><br />+32 (0) 69 84 34 82
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
-							<h2>Maro Recycling</h2>
-							Sint-Eloois-winkelstraat 127<br />8880 Ledegem<br /><br />+32 (0) 56 50 06 72
-						</div>
-					</div>
+				<div class="col-md-4 contactadres">
+					<h2>Cobra Packaging & Recycling</h2>
+					Rue du Mont des Carliers 2/Z<br />7522 Tournai<br /><br />+32 (0) 69 84 34 82<br /><br /><br /><br />
+	
+					<h2>Maro Recycling</h2>
+					Sint-Eloois-winkelstraat 127<br />8880 Ledegem<br /><br />+32 (0) 56 50 06 72
 				</div>
 			</div>
-	
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>     
-    <script type="text/javascript">
-            // When the window has finished loading create our google map below
-            google.maps.event.addDomListener(window, 'load', init);
-        
-            function init() {
-                // Basic options for a simple Google Map
-                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-                var mapOptions = {
-                    // How zoomed in you want the map to start at (always required)
-                    zoom: 11,
+			<?php snippet('maps') ?>
+		</div>	
 
-                    // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(50.623221, 3.319934), // New York
-
-                    // How you would like to style the map. 
-                    // This is where you would paste any style found on Snazzy Maps.
-                   styles: [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}]
-                };
-
-                // Get the HTML DOM element that will contain your map 
-                // We are using a div with id="map" seen below in the <body>
-                var mapElement = document.getElementById('map');
-
-                // Create the Google Map using our element and options defined above
-                var map = new google.maps.Map(mapElement, mapOptions);
-
-                // Let's also add a marker while we're at it
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(50.623221, 3.319934),
-                    map: map,
-                    title: 'Snazzy!'
-                });
-            }
-        </script>
-        <div id="map"></div>
-    </div>
-  </main>
-
+  	</main>
 <?php snippet('footer') ?>

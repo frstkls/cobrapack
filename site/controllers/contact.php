@@ -7,12 +7,12 @@ return function ($site, $pages, $page)
     $form = new Form([
         'email' => [
             'rules' => ['required', 'email'],
-            'message' => 'Please enter a valid email address',
+            'message' => 'Gelieve een geldig e-mailadres in te vullen',
         ],
         'name' => [],
         'message' => [
             'rules' => ['required'],
-            'message' => 'Please enter a message',
+            'message' => 'Gelieve een bericht in te vullen',
         ],
     ]);
 

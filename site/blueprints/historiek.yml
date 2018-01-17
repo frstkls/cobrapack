@@ -1,0 +1,41 @@
+<?php if(!defined('KIRBY')) exit ?>
+
+title: Historiek
+pages: default
+fields:
+  title:
+    label: Page title (H1)
+    type: text
+    width: 1/2
+  text:
+    label: Text and images
+    type: textarea
+    help: <i class="fa fa-lightbulb-o"></i> <a href="/assets/docs/kirbytext101.html" target="_blank">Text formatting with Kirby</a>
+  intro:
+    label: Introtekst
+    type: textarea
+    buttons: false
+  events:
+    label: Historiek items
+    type: structure
+    fields:
+      event_datum:
+        label: Datum
+        type: date
+      event_titel:
+        label: Titel
+        type: text
+      event_tekst:
+        label: Tekst
+        type: textarea
+      event_beeld:
+        label: Afbeelding
+        type: image
+      positie:
+        label: Positie
+        type: radio
+        options:
+          left: Links
+          right: Rechts
+          
+ 

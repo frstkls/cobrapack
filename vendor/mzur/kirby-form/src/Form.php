@@ -73,6 +73,9 @@ class Form implements FormInterface
      */
     protected $messages = [];
 
+    # Custom PJ
+    public $customFields = [];
+
     /**
      * Create a new instance
      *
@@ -91,8 +94,17 @@ class Form implements FormInterface
 
         // Prepopulate the fields with old input data, if it exists
         foreach ($this->fields as $field => $attributes) {
-            // Decode HTML entities that might have been encoded by $this->old()
-            $this->data[$field] = $this->decodeField(Request::postData($field));
+            # Begin custom PJ
+            if (in_array('file', $this->rules[$field], true)) {
+                if (in_array('required', $this->rules[$field])) {
+                    $this->rules[$field][array_search('file', $this->rules[$field])] = 'requiredFile';
+                }
+                $this->data[$field] = Request::files($field);
+            } else {
+                // Decode HTML entities that might have been encoded by $this->old()
+                $this->data[$field] = $this->decodeField(Request::postData($field));
+            }
+            # End custom PJ
         }
 
         // Get any errors from the Flash
@@ -142,6 +154,7 @@ class Form implements FormInterface
      */
     public function validates()
     {
+
         if (csrf(Request::postData(self::CSRF_FIELD)) !== true) {
             if (Config::get('debug') === true) {
                 throw new TokenMismatchException('The CSRF token was invalid.');
@@ -313,5 +326,10 @@ class Form implements FormInterface
         return is_array($data)
             ? array_map([$this, 'decodeField'], $data)
             : htmlspecialchars_decode($data);
+    }
+
+    # Custom PJ
+    public function addCustom($field, $data) {
+        $this->customFields[$field] = $data;
     }
 }

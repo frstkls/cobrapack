@@ -34,14 +34,14 @@ c::set('debug', true);
 c::set('languages', array(
   array(
     'code'    => 'nl',
-    'name'    => 'NL',
+    'name'    => 'nl',
     'default' => true,
     'locale'  => 'nl_NL',
     'url'     => '/',
   ),
   array(
     'code'    => 'fr',
-    'name'    => 'FR',
+    'name'    => 'fr',
     'locale'  => 'fr_FR',
     'url'     => '/fr',
   ),

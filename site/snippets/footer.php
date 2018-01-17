@@ -6,10 +6,10 @@
                 <div class="row">
                     <div class="col-md-4 col-lg-4 col-xs-4">
                     <?php if($site->language()->code() == 'nl'): ?>
-                    <a href="<?php echo $site->url() ?>"><img class="logo" src="<?php echo kirby()->urls()->assets() . '/img/logo-nl.png' ?>" alt="Cobrapack"></a>
+                    <? snippet('signupnlx') ?>
                     <?php else: ?>
-                    <a href="<?php echo $site->url() ?>/fr"><img class="logo" src="<?php echo kirby()->urls()->assets() . '/img/logo-fr.png' ?>" alt="Cobrapack"></a>
-                    <?php endif ?>
+                    <? snippet('signupfrx') ?>
+                    <?php endif ?>                        
                     </div>
                     <div class="col-md-4 col-lg-4 col-xs-4"><?= $site->adrescobra() ?></div>
                     <div class="col-md-4 col-lg-4 col-xs-4"><?= $site->adresmaro() ?></div>                   
@@ -17,18 +17,26 @@
             </div>
             <div class="footerbottom">
                 <div class="container">
-                    <?= $site->footer()->kirbytext() ?>
+                    <div class="row">                       
+                        <div class="col-md-4 col-lg-4 col-xs-4">
+                            <?= $site->footer()->kirbytext() ?>
+                        </div>
+                        <div class="footerlogo col-md-8 col-lg-8 col-xs-8">
+                            <img src="<?php echo kirby()->urls()->assets() . '/img/ismp15.png' ?>">
+                            <img src="<?php echo kirby()->urls()->assets() . '/img/valipac.png' ?>">
+                        </div>
+                    </div>
                 </div> 
             </div>
         </footer>
-        <?= js('assets/js/vendor/jquery.min.js') ?>
-        <?= js('assets/js/vendor/plugins.min.js') ?>    
-        <?= js('assets/js/onload.js') ?>   
-        <script type='text/javascript'>
-/* <![CDATA[ */
-var ssb_ui_data = {"z_index":"1"};
-/* ]]> */
-</script>    
-        <?= js('assets/js/vendor/ssb-ui-js.js') ?> 
+        <?= js('assets/js/vendor/jquery.eeyellow.Timeline.js') ?> 
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.VivaTimeline').vivaTimeline({
+                carousel: false,
+                carouselTime: 3000
+            });
+        });
+        </script>
     </body>
 </html>

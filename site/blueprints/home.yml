@@ -11,10 +11,13 @@ fields:
     label: Text and images
     type: textarea
     help: <i class="fa fa-lightbulb-o"></i> <a href="/assets/docs/kirbytext101.html" target="_blank">Text formatting with Kirby</a>
-  intro:
-    label: Introtekst
-    type: textarea
-    buttons: false
+  slides:
+      label: Slider
+      type: structure
+      fields:
+        slide:
+          label: Slide
+          type: image
   nieuws:
     label: Nieuws
     type: structure

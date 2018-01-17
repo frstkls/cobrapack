@@ -8,7 +8,7 @@ fields:
     type: textarea
   intro:
     label: Omschrijving
-    type: text
+    type: wysiwyg
     width: 1/2
   titlesuffix:
     label: Title suffix (Optional)
